@@ -1,7 +1,7 @@
 const net = require("net");
 const connect = function () {
   const conn = net.createConnection({
-    host: '165.227.47.243',
+    host: 'localhost',
     port: '50541', 
   });
   conn.on('data', (data) => {
@@ -10,6 +10,7 @@ const connect = function () {
   conn.on('connect', (data) => {
     console.log("connection established!");
     conn.write("Name: JOE");
+    
   });
   // interpret incoming data as text
   conn.setEncoding("utf8");
